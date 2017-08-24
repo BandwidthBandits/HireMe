@@ -14,6 +14,8 @@
 		1154AE481F4F5F1E00DE4E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1154AE461F4F5F1E00DE4E2F /* LaunchScreen.storyboard */; };
 		1154AE531F4F5F1E00DE4E2F /* HireMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154AE521F4F5F1E00DE4E2F /* HireMeTests.swift */; };
 		1154AE5E1F4F5F1E00DE4E2F /* HireMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154AE5D1F4F5F1E00DE4E2F /* HireMeUITests.swift */; };
+		1154AE6E1F4F649F00DE4E2F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1154AE6D1F4F649F00DE4E2F /* CloudKit.framework */; };
+		1154AE701F4F76C600DE4E2F /* CKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154AE6F1F4F76C600DE4E2F /* CKHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		1154AE591F4F5F1E00DE4E2F /* HireMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HireMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1154AE5D1F4F5F1E00DE4E2F /* HireMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HireMeUITests.swift; sourceTree = "<group>"; };
 		1154AE5F1F4F5F1E00DE4E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1154AE6B1F4F649700DE4E2F /* HireMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HireMe.entitlements; sourceTree = "<group>"; };
+		1154AE6D1F4F649F00DE4E2F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1154AE6F1F4F76C600DE4E2F /* CKHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1154AE6E1F4F649F00DE4E2F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				1154AE511F4F5F1E00DE4E2F /* HireMeTests */,
 				1154AE5C1F4F5F1E00DE4E2F /* HireMeUITests */,
 				1154AE3B1F4F5F1E00DE4E2F /* Products */,
+				1154AE6C1F4F649F00DE4E2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +104,14 @@
 		1154AE3C1F4F5F1E00DE4E2F /* HireMe */ = {
 			isa = PBXGroup;
 			children = (
+				1154AE6B1F4F649700DE4E2F /* HireMe.entitlements */,
 				1154AE3D1F4F5F1E00DE4E2F /* AppDelegate.swift */,
 				1154AE3F1F4F5F1E00DE4E2F /* ViewController.swift */,
 				1154AE411F4F5F1E00DE4E2F /* Main.storyboard */,
 				1154AE441F4F5F1E00DE4E2F /* Assets.xcassets */,
 				1154AE461F4F5F1E00DE4E2F /* LaunchScreen.storyboard */,
 				1154AE491F4F5F1E00DE4E2F /* Info.plist */,
+				1154AE6F1F4F76C600DE4E2F /* CKHandler.swift */,
 			);
 			path = HireMe;
 			sourceTree = "<group>";
@@ -123,6 +132,14 @@
 				1154AE5F1F4F5F1E00DE4E2F /* Info.plist */,
 			);
 			path = HireMeUITests;
+			sourceTree = "<group>";
+		};
+		1154AE6C1F4F649F00DE4E2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1154AE6D1F4F649F00DE4E2F /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +210,16 @@
 				TargetAttributes = {
 					1154AE391F4F5F1E00DE4E2F = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5PJ639S4VT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					1154AE4D1F4F5F1E00DE4E2F = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -260,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1154AE401F4F5F1E00DE4E2F /* ViewController.swift in Sources */,
+				1154AE701F4F76C600DE4E2F /* CKHandler.swift in Sources */,
 				1154AE3E1F4F5F1E00DE4E2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +441,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HireMe/HireMe.entitlements;
+				DEVELOPMENT_TEAM = 5PJ639S4VT;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bandwidthbandits.HireMe;
@@ -426,6 +455,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HireMe/HireMe.entitlements;
+				DEVELOPMENT_TEAM = 5PJ639S4VT;
 				INFOPLIST_FILE = HireMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bandwidthbandits.HireMe;
