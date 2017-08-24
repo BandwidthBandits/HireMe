@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112D12261F4F8FB900B4533F /* CKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112D12251F4F8FB900B4533F /* CKHandler.swift */; };
 		1154AE3E1F4F5F1E00DE4E2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154AE3D1F4F5F1E00DE4E2F /* AppDelegate.swift */; };
 		1154AE401F4F5F1E00DE4E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1154AE3F1F4F5F1E00DE4E2F /* ViewController.swift */; };
 		1154AE431F4F5F1E00DE4E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1154AE411F4F5F1E00DE4E2F /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		112D12251F4F8FB900B4533F /* CKHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKHandler.swift; sourceTree = "<group>"; };
 		1154AE3A1F4F5F1E00DE4E2F /* HireMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HireMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1154AE3D1F4F5F1E00DE4E2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1154AE3F1F4F5F1E00DE4E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1154AE6E1F4F649F00DE4E2F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112D12241F4F8FAB00B4533F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				112D12251F4F8FB900B4533F /* CKHandler.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		1154AE311F4F5F1E00DE4E2F = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +103,6 @@
 				1154AE511F4F5F1E00DE4E2F /* HireMeTests */,
 				1154AE5C1F4F5F1E00DE4E2F /* HireMeUITests */,
 				1154AE3B1F4F5F1E00DE4E2F /* Products */,
-				1154AE6C1F4F649F00DE4E2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,16 +119,15 @@
 		1154AE3C1F4F5F1E00DE4E2F /* HireMe */ = {
 			isa = PBXGroup;
 			children = (
-				1154AE6B1F4F649700DE4E2F /* HireMe.entitlements */,
+				112D12241F4F8FAB00B4533F /* Libraries */,
 				1154AE3D1F4F5F1E00DE4E2F /* AppDelegate.swift */,
 				1154AE3F1F4F5F1E00DE4E2F /* ViewController.swift */,
-				9F9602721F4F73AF004452AA /* New Group */,
+				9F9602721F4F73AF004452AA /* TabViewControllers */,
 				1154AE411F4F5F1E00DE4E2F /* Main.storyboard */,
 				A67E0DDC1F4F7B6C0071EF65 /* PeterStoryboard.storyboard */,
 				1154AE441F4F5F1E00DE4E2F /* Assets.xcassets */,
 				1154AE461F4F5F1E00DE4E2F /* LaunchScreen.storyboard */,
 				1154AE491F4F5F1E00DE4E2F /* Info.plist */,
-				1154AE6F1F4F76C600DE4E2F /* CKHandler.swift */,
 			);
 			path = HireMe;
 			sourceTree = "<group>";
@@ -143,7 +150,7 @@
 			path = HireMeUITests;
 			sourceTree = "<group>";
 		};
-		9F9602721F4F73AF004452AA /* New Group */ = {
+		9F9602721F4F73AF004452AA /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				9F9602661F4F737C004452AA /* JobPostTabView.swift */,
@@ -152,7 +159,7 @@
 				9F9602681F4F737C004452AA /* SearchTabView.swift */,
 				9F9602691F4F737C004452AA /* SettingsTabView.swift */,
 			);
-			name = "New Group";
+			name = TabViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +312,7 @@
 				9F96026B1F4F737C004452AA /* MessageTabView.swift in Sources */,
 				9F9602711F4F739E004452AA /* HomeTabView.swift in Sources */,
 				1154AE3E1F4F5F1E00DE4E2F /* AppDelegate.swift in Sources */,
+				112D12261F4F8FB900B4533F /* CKHandler.swift in Sources */,
 				9F96026D1F4F737C004452AA /* SettingsTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
