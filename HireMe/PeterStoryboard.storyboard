@@ -13,7 +13,7 @@
         <!--Post Job-->
         <scene sceneID="rg9-a1-6qC">
             <objects>
-                <viewController id="Vhw-OC-cdn" sceneMemberID="viewController">
+                <viewController id="Vhw-OC-cdn" customClass="JobPostTabView" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SxR-fj-Ajd"/>
                         <viewControllerLayoutGuide type="bottom" id="8jt-cU-CxR"/>
@@ -48,6 +48,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Post!"/>
+                                <connections>
+                                    <action selector="buttonPostTouchUpInside:" destination="Vhw-OC-cdn" eventType="touchUpInside" id="Wnh-uH-bgQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price Group:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kv-Ly-QMm">
                                 <rect key="frame" x="16" y="316" width="96" height="21"/>
@@ -110,6 +113,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Post Job" id="hke-Q6-wPO"/>
+                    <connections>
+                        <outlet property="estimateTimeTextField" destination="iNl-HG-Jnt" id="z20-qm-224"/>
+                        <outlet property="hourlyRateTextField" destination="Me4-YL-w90" id="206-8I-Jh6"/>
+                        <outlet property="percentLabel" destination="B5Z-SA-Rmp" id="Oix-kg-xOF"/>
+                        <outlet property="priceGroupTextField" destination="QCL-rv-iaF" id="xua-r8-DDw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jq-8l-3O3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
