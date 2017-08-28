@@ -17,6 +17,7 @@ class CKHandler {
     static var container: CKContainer?
     static var publicDB: CKDatabase?
     static var privateDB: CKDatabase?
+    static var currentUserID: String?
     
     static func initializeCloudkit() {
         // set up the default container
@@ -25,6 +26,9 @@ class CKHandler {
         CKHandler.publicDB = CKHandler.container?.publicCloudDatabase
         // get the private database
         CKHandler.privateDB = CKHandler.container?.privateCloudDatabase
+        
+        //
+        CKHandler.GetCurrentUserID()
     }
     
     //NOTE: 1600 meters in a mile
@@ -55,18 +59,18 @@ class CKHandler {
             
         }
     }
-//    ---EXAMPLE USE:---
-//    let testLocation = CLLocation(latitude: 0, longitude: 0)
-//    
-//    CKHandler.fetchLocalJobPosts(testLocation, radiusInMeters: 1600) { (records) in
-//        records?.forEach({ (record) in
-//            print(record)
-//        })
-//    }
+    //    ---EXAMPLE USE:---
+    //    let testLocation = CLLocation(latitude: 0, longitude: 0)
+    //
+    //    CKHandler.fetchLocalJobPosts(testLocation, radiusInMeters: 1600) { (records) in
+    //        records?.forEach({ (record) in
+    //            print(record)
+    //        })
+    //    }
     
     
     //Creates a new job post and uploads it to cloudKit
-    static func createJobPost(owner: String, title: String, desc: String, timeEstimate: Int, priceGroup: Int, _ location:CLLocation, onComplete:@escaping UploadRecordCallback, onUploadError:@escaping ErrorCallback ) {
+    static func createJobPost(owner: String, title: String, desc: String, timeEstimate: Int, priceGroup: String, _ location:CLLocation, onComplete:@escaping UploadRecordCallback, onUploadError:@escaping ErrorCallback ) {
         let newRecord:CKRecord = CKRecord(recordType: "JobPosts")
         newRecord.setValue(owner, forKey: "owner")
         newRecord.setValue(title, forKey: "title")
@@ -77,13 +81,13 @@ class CKHandler {
         
         UploadNewRecord(record: newRecord, onComplete: onComplete, onUploadError: onUploadError)
     }
-//    ---EXAMPLE USE---
-//    let loc = CLLocation(latitude: 0, longitude: 0)
-//    CKHandler.createJobPost(owner: "nil", title: "New Job", desc: "This job is fun", timeEstimate: 30, loc, onComplete: { (record) in
-//        print("Uploaded Record Succefullt!")
-//    }) { (error) in
-//        print("There was an error: \(error)")
-//    }
+    //    ---EXAMPLE USE---
+    //    let loc = CLLocation(latitude: 0, longitude: 0)
+    //    CKHandler.createJobPost(owner: "nil", title: "New Job", desc: "This job is fun", timeEstimate: 30, loc, onComplete: { (record) in
+    //        print("Uploaded Record Succefullt!")
+    //    }) { (error) in
+    //        print("There was an error: \(error)")
+    //    }
     
     
     //Uploads a record to Cloud Kit
@@ -104,6 +108,23 @@ class CKHandler {
             onComplete(record)
             
         }
+    }
+    
+    
+    //Gets the recordname (ID) for the current user
+    static func GetCurrentUserID() {
+        CKHandler.container?.fetchUserRecordID(completionHandler: { (recordID, error) in
+            //stop this if there was an error
+            if error != nil {
+                print("**ERROR** Couldn't get current user ID")
+                return;
+            }
+            
+            CKHandler.currentUserID = recordID?.recordName
+            
+            print("Successfully got current user ID: \(CKHandler.currentUserID)")
+            
+        })
     }
     
 }
