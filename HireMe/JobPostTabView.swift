@@ -70,7 +70,7 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         // guard works, owner is set to current User ID
-            CKHandler.createJobPost(owner: owner, title: titleTextField.text!, desc: descriptionTextField.text!, timeEstimate: 30, priceGroup: priceGroupTextField, loc, onComplete: { (record) in
+            CKHandler.createJobPost(owner: owner, title: titleTextField.text!, desc: descriptionTextField.text!, timeEstimate: 30, priceGroup: priceGroupTextField.text!, loc, onComplete: { (record) in
                 print("Uploaded Record Succefullt!")
         }) { (error) in
                 print("There was an error: \(error)")
