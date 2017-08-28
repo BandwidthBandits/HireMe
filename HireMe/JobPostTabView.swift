@@ -29,15 +29,29 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.titleTextField.delegate = self as! UITextFieldDelegate
+        //self.priceGroupTextField.delegate = self
+        //self.descriptionTextField.delegate = self
+        //self.estimateTimeTextField.delegate = self
+        //self.locationTextField.delegate = self
+        
+        
         let pickerView = UIPickerView()
         
         pickerView.delegate = self
         
         priceGroupTextField.inputView = pickerView
-        
+
         // Do any additional setup after loading the view, typically from a nib.
-       
+        
     }
+    
+    // hide keyboard when user touches outside keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,18 +93,8 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     
     //hides keyboard when touching out of label view
-    @IBAction func buttonHideKeyboard(_ sender: Any) {
-        titleTextField.resignFirstResponder()
-        descriptionTextField.resignFirstResponder()
-        priceGroupTextField.resignFirstResponder()
-        estimateTimeTextField.resignFirstResponder()
-        locationTextField.resignFirstResponder()
-    }
-    
     
 
-   
-    
     
 }
 
