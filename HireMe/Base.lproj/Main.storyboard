@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SyH-wT-ASc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n12-Fk-DXt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,22 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="sWA-py-eVB">
-            <objects>
-                <navigationController id="SyH-wT-ASc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKh-To-iXD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="n12-Fk-DXt" kind="relationship" relationship="rootViewController" id="j4J-j0-FeH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wHT-ZR-M1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2543" y="102"/>
-        </scene>
         <!--HireMe-->
         <scene sceneID="EXh-IS-0Hb">
             <objects>
@@ -36,11 +20,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="MLp-Pu-Zq6" kind="relationship" relationship="viewControllers" id="Fgz-Rv-tsd"/>
                         <segue destination="UgO-2y-LWN" kind="relationship" relationship="viewControllers" id="8TZ-eY-ugO"/>
                         <segue destination="c2X-s6-YPp" kind="relationship" relationship="viewControllers" id="Jo1-mt-4id"/>
                         <segue destination="IGQ-nN-6RA" kind="relationship" relationship="viewControllers" id="0oT-Y6-SXq"/>
                         <segue destination="GqV-o7-vC4" kind="relationship" relationship="viewControllers" id="iBR-Py-PzW"/>
-                        <segue destination="MLp-Pu-Zq6" kind="relationship" relationship="viewControllers" id="Fgz-Rv-tsd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8K-NK-NJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +72,7 @@
         <!--Home-->
         <scene sceneID="5Es-PP-1aY">
             <objects>
-                <viewController id="MLp-Pu-Zq6" customClass="HomeTabView" sceneMemberID="viewController">
+                <viewController id="MLp-Pu-Zq6" customClass="HomeTabView" customModule="HireMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SRF-ny-7Ma"/>
                         <viewControllerLayoutGuide type="bottom" id="sUm-cA-9yC"/>
@@ -108,28 +92,47 @@
                                     <segment title="$20+"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="528-1I-8Sb">
-                                <rect key="frame" x="16" y="28" width="343" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-7n-L8J">
+                                <rect key="frame" x="170" y="121" width="35" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZZ-nI-QCs">
-                                <rect key="frame" x="38" y="194" width="299" height="347"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </containerView>
+                                <state key="normal" title="reset"/>
+                                <connections>
+                                    <action selector="resetTouchUpInside:" destination="MLp-Pu-Zq6" eventType="touchUpInside" id="7U3-Ic-MaR"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZu-x7-fqf" userLabel="Card">
+                                <rect key="frame" x="30" y="168" width="314" height="331"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWG-LK-bTl" userLabel="CardResponseImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="331"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="urg-DN-MDZ" appends="YES" id="r4C-wH-oZJ"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="Sat-r3-G7I"/>
                     <connections>
-                        <outlet property="jobPosting" destination="qZZ-nI-QCs" id="Pmc-u9-9zD"/>
+                        <outlet property="cardResponseView" destination="jWG-LK-bTl" id="PdV-89-pTY"/>
+                        <outlet property="cardView" destination="pZu-x7-fqf" id="MvZ-5u-al6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tm-X1-gdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="urg-DN-MDZ">
+                    <connections>
+                        <action selector="panCardGestureRecognizer:" destination="MLp-Pu-Zq6" id="WRs-pw-IqA"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2639.1999999999998" y="1441.529235382309"/>
+            <point key="canvasLocation" x="-2639.5" y="1441.5"/>
         </scene>
         <!--Post Job-->
         <scene sceneID="kMU-rV-Tfi">
