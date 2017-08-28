@@ -70,7 +70,7 @@ class CKHandler {
     
     
     //Creates a new job post and uploads it to cloudKit
-    static func createJobPost(owner: String, title: String, desc: String, timeEstimate: Int, priceGroup: Int, _ location:CLLocation, onComplete:@escaping UploadRecordCallback, onUploadError:@escaping ErrorCallback ) {
+    static func createJobPost(owner: String, title: String, desc: String, timeEstimate: Int, priceGroup: String, _ location:CLLocation, onComplete:@escaping UploadRecordCallback, onUploadError:@escaping ErrorCallback ) {
         let newRecord:CKRecord = CKRecord(recordType: "JobPosts")
         newRecord.setValue(owner, forKey: "owner")
         newRecord.setValue(title, forKey: "title")
