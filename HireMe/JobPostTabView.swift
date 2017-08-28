@@ -12,7 +12,6 @@ import CloudKit
 
 class JobPostTabView: UIViewController {
     
-    var ownerSender
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
@@ -37,7 +36,7 @@ class JobPostTabView: UIViewController {
     }
     
     @IBAction func buttonPostTouchInsideUp(_ sender: Any) {
-        CKHandler.createJobPost(owner: "ownerSender", title: "titleTextField", desc: "descriptionTextField", timeEstimate: estimateTimeTextField, location, onComplete: { (record) in
+        CKHandler.createJobPost(owner: "nil", title: titleTextField.text!, desc: descriptionTextField.text!, timeEstimate: 30, loc, onComplete: { (record) in
             print("Uploaded Record Succefullt!")
         }) { (error) in
             print("There was an error: \(error)")
