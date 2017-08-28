@@ -20,6 +20,7 @@
 		9F96026C1F4F737C004452AA /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9602681F4F737C004452AA /* SearchTabView.swift */; };
 		9F96026D1F4F737C004452AA /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9602691F4F737C004452AA /* SettingsTabView.swift */; };
 		9F9602711F4F739E004452AA /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9602701F4F739E004452AA /* HomeTabView.swift */; };
+		9FB8CF541F54B42200856D49 /* PeterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8CF531F54B42200856D49 /* PeterStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		9F9602681F4F737C004452AA /* SearchTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
 		9F9602691F4F737C004452AA /* SettingsTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		9F9602701F4F739E004452AA /* HomeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		9FB8CF531F54B42200856D49 /* PeterStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PeterStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				1154AE3F1F4F5F1E00DE4E2F /* ViewController.swift */,
 				9F9602721F4F73AF004452AA /* TabViewControllers */,
 				1154AE411F4F5F1E00DE4E2F /* Main.storyboard */,
+				9FB8CF531F54B42200856D49 /* PeterStoryboard.storyboard */,
 				1154AE441F4F5F1E00DE4E2F /* Assets.xcassets */,
 				1154AE461F4F5F1E00DE4E2F /* LaunchScreen.storyboard */,
 				1154AE491F4F5F1E00DE4E2F /* Info.plist */,
@@ -277,6 +280,7 @@
 			files = (
 				1154AE481F4F5F1E00DE4E2F /* LaunchScreen.storyboard in Resources */,
 				1154AE451F4F5F1E00DE4E2F /* Assets.xcassets in Resources */,
+				9FB8CF541F54B42200856D49 /* PeterStoryboard.storyboard in Resources */,
 				1154AE431F4F5F1E00DE4E2F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,9 +11,14 @@ import UIKit
 
 class SettingsTabView: UIViewController {
 
+    @IBOutlet weak var profilePicture: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
+        
+        profilePicture.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

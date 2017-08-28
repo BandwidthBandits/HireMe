@@ -25,6 +25,7 @@ class HomeTabView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func panCardGestureRecognizer(_ sender: UIPanGestureRecognizer) {
         let cardView = sender.view!
         // how far you moved your finger when dragging
@@ -52,28 +53,37 @@ class HomeTabView: UIViewController {
         if sender.state == UIGestureRecognizerState.ended {
             if cardView.center.x < 75 {
                 // move off to left side
-                UIView.animate(withDuration: 0.3, animations: {
-                    cardView.center = CGPoint(x: cardView.center.x - 200,  y: cardView.center.y + 75)
+                UIView.animate(withDuration: 0.5, animations: {
+                    cardView.center = CGPoint(x: cardView.center.x - 200,  y: cardView.center.y - 75)
                     // to hide card
                     cardView.alpha = 0
-                })
+                }) { (finished) in
+                    cardView.center = self.view.center
+                    self.cardView.transform = CGAffineTransform.identity
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        cardView.alpha = 1
+                    })
+                }
                 return
             }
             else if cardView.center.x > (view.frame.width - 75) {
-                UIView.animate(withDuration: 0.3, animations: {
-                    cardView.center = CGPoint(x: cardView.center.x + 200,  y: cardView.center.y + 75)
+                UIView.animate(withDuration: 0.5, animations: {
+                    cardView.center = CGPoint(x: cardView.center.x + 200,  y: cardView.center.y - 75)
                     cardView.alpha = 0
-                })
+                }) { (finished) in
+                    cardView.center = self.view.center
+                    self.cardView.transform = CGAffineTransform.identity
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        cardView.alpha = 1
+                    })
+                }
                 return
             }
             resetCard()
         }
     }
-    
-    @IBAction func resetTouchUpInside(_ sender: Any) {
-        resetCard()
-    }
-    
     
     func resetCard()
     {
