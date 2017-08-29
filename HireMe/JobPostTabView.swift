@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CloudKit
 
-class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class JobPostTabView: UIViewController, UIPickerViewDelegate {
     
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -29,26 +29,16 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.titleTextField.delegate = self as! UITextFieldDelegate
-        //self.priceGroupTextField.delegate = self
-        //self.descriptionTextField.delegate = self
-        //self.estimateTimeTextField.delegate = self
-        //self.locationTextField.delegate = self
-        
-        
         let pickerView = UIPickerView()
         
         pickerView.delegate = self
         
         priceGroupTextField.inputView = pickerView
+        
+        self.titleTextField.delegate = self as! UITextFieldDelegate
 
         // Do any additional setup after loading the view, typically from a nib.
         
-    }
-    
-    // hide keyboard when user touches outside keyboard
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
 
     
@@ -56,6 +46,16 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // hides keyboard when touching out 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleTextField.resignFirstResponder()
     }
     
     // the following functions related to clicking on price group text field -- scrolling options will pop up.
@@ -91,8 +91,6 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 
-    
-    //hides keyboard when touching out of label view
     
 
     

@@ -153,7 +153,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jq-8l-3O3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1972" y="1441.529235382309"/>
+            <point key="canvasLocation" x="-2348" y="1434"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="v3Z-a6-hKs">
+            <objects>
+                <viewController id="Ewe-pK-fdg" customClass="HomeTabView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P4y-5c-WRJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0RJ-7d-nNy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAa-A8-CRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Messages" id="Z7K-NQ-7ze"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4w-Vt-fSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="1444"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iBO-hI-h9M">
+            <objects>
+                <viewController id="1mA-HD-ca6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="usy-od-0Sr"/>
+                        <viewControllerLayoutGuide type="bottom" id="KJB-Ch-WSL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bek-k4-NOF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="e7Q-pN-CxY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t86-hz-Fss" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1062" y="1445"/>
         </scene>
     </scenes>
 </document>
