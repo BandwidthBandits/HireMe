@@ -12,6 +12,7 @@ import CloudKit
 
 class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate  {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
@@ -19,6 +20,7 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var estimateTimeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var percentLabel: UILabel!
+
     
     let loc = CLLocation(latitude: 0, longitude: 0)
     let pickerView = UIPickerView()
@@ -32,6 +34,7 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -48,9 +51,6 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         // Do any additional setup after loading the view, typically from a nib.
         
     }
-
-    
-    
 
     
 
@@ -113,10 +113,8 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 print("There was an error: \(error)")
         }
     }
-
     
 
-    
 }
 
 
