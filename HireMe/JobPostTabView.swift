@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CloudKit
 
-class JobPostTabView: UIViewController, UIPickerViewDelegate {
+class JobPostTabView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate  {
     
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -21,25 +21,36 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var percentLabel: UILabel!
     
     let loc = CLLocation(latitude: 0, longitude: 0)
+    let pickerView = UIPickerView()
+    
+
+
     
     // array for the scrolling options after called for group text field
     var pickOption = [ "$5", "$10", "$15", "$20", "+$20"]
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pickerView = UIPickerView()
-        
         pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        titleTextField.delegate = self
+        //must fix here** descriptionTextField.delegate =
+        priceGroupTextField.delegate = self
+        estimateTimeTextField.delegate = self
+        locationTextField.delegate = self
         
         priceGroupTextField.inputView = pickerView
-        
-        self.titleTextField.delegate = self as! UITextFieldDelegate
+    
 
         // Do any additional setup after loading the view, typically from a nib.
         
     }
+
+    
+    
 
     
 
@@ -49,14 +60,23 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate {
     }
     
     
+    
     // hides keyboard when touching out 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         titleTextField.resignFirstResponder()
+        descriptionTextField.resignFirstResponder()
+        priceGroupTextField.resignFirstResponder()
+        locationTextField.resignFirstResponder()
+        estimateTimeTextField.resignFirstResponder()
+        return true
     }
+    
     
     // the following functions related to clicking on price group text field -- scrolling options will pop up.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -73,7 +93,10 @@ class JobPostTabView: UIViewController, UIPickerViewDelegate {
     
     @nonobjc func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         priceGroupTextField.text = pickOption[row]
+        self.view.endEditing(false)
     }
+    
+    
     
 
     @IBAction func buttonPostTouchInsideUp(_ sender: Any) {
